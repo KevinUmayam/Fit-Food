@@ -15,7 +15,7 @@ fetch("https://exercisedb.p.rapidapi.com/exercises", options)
     for (let i = 0; i < infoArray.length; i++) {
       //   let bodypartEl = infoArray[i].bodyPart;
       //   console.log(bodypartEl);
-      let equipmentEl = infoArray[i].equipment;
-      console.log(equipmentEl);
+      // let equipmentEl = infoArray[i].equipment;
+      // console.log(equipmentEl);
     }
   });
