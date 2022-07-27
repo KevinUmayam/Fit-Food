@@ -4,32 +4,76 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/assets/CSSfolder/normalize.css" />
-    <link rel="stylesheet" href="/assets/CSSfolder/skeleton.css" />
-    <link rel="stylesheet" href="/assets/CSSfolder/style.css" />
-
+    <link rel="stylesheet" href="/assets/CSSfolder/normalize.css">
+    <link rel="stylesheet" href="/assets/CSSfolder/skeleton.css">
+    <link rel="stylesheet" href="/assets/CSSfolder/style.css">
     <title>FitFood</title>
   </head>
+
   <body>
     <h1>Welcome to FitFood</h1>
     <h3>Please fill out the following questions to complete your fitness journey</h3>
-    <div class="row">
-      <div class="six columns">
-        <label for="exampleRecipientInput">Desired Workout Goals</label>
-        <select class="u-full-width" id="exampleRecipientInput">
-          <option value="Option 1">Cardio</option>
-          <option value="Option 2">Bodyweight</option>
-          <option value="Option 3">Weightlifting</option>
-        </select>
-      <div class="six columns">
-        <label for="exampleRecipientInput">Meal Plans</label>
-        <select class="u-full-width" id="exampleRecipientInput">
-          <option value="Option 1">Gain weight?</option>
-          <option value="Option 2">Lose weight?</option>
-          <option value="Option 3">Vegan?</option>
-        </select>
+    <form class=>
+      <div class="row">
+        <div class="six columns">
+          <label for="exampleRecipientInput">Desired Workout Types</label>
+          <select class="u-full-width" id="workoutInput">
+            <option value="Option 1">Bodyweight</option>
+            <option value="Option 2">Cable</option>
+            <option value="Option 3">Weights</option>
+          </select>
+        </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="six columns">
+          <label for="exampleRecipientInput">Meal Calorie Content</label>
+          <select class="u-full-width" id="fitnessGoalsInput">
+            <option value="Option 1">1,000-2,000</option>
+            <option value="Option 2">2,001-3,000</option>
+            <option value="Option 3">3,001-4,000</option>
+          </select>
+        </div>
+      </div>
+      <section class="columns">
+        <label class="container custom-container-diet">
+          <h5>Diet:</h5>
+          <input type="checkbox">Vegetarian
+          <input type="checkbox">Vegan
+          <input type="checkbox">High-Protein
+          <input type="checkbox">Low-Carb
+          <input type="checkbox">Low-Fat
+          <input type="checkbox">Low-Sugar
+          <input type="checkbox">Balanced
+        </label>
+        <label class="container custom-container-allergies">
+          <h5>Allergies:</h5>
+          <input type="checkbox">Gluten-Free
+          <input type="checkbox">Dairy-Free
+          <input type="checkbox">Peanut-Free
+        </label>
+      </section>
+      <!-- <div class="row">
+        <div class="six columns">
+          <label for="exampleRecipientInput">Meal Protein Content</label>
+          <select class="u-full-width" id="fitnessGoalsInput">
+            <option value="Option 1">Gain Weight?</option>
+            <option value="Option 2">Lose Weight?</option>
+            <option value="Option 3">Maintain Weight?</option>
+          </select>
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="six columns">
+          <label for="exampleRecipientInput">Meal Plans</label>
+          <select class="u-full-width" id="mealPlanInput">
+            <option value="Option 1">Dairy Free?</option>
+            <option value="Option 2">Vegetarian?</option>
+            <option value="Option 3">Vegan?</option>
+          </select>
+        </div>
+      </div>
+        <input class="button-primary" type="submit" value="Submit">
+    </form>
 
   </body>
   <script src="/assets/javascriptFolder/scripts.js"></script>
