@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="/assets/CSSfolder/normalize.css">
     <link rel="stylesheet" href="/assets/CSSfolder/skeleton.css">
     <link rel="stylesheet" href="/assets/CSSfolder/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@600&display=swap" rel="stylesheet">
     <title>FitFood</title>
   </head>
 
   <body>
     <h1>Welcome to FitFood</h1>
-    <h3>Please fill out the following questions to complete your fitness journey</h3>
+    <h4 class="container instructions">
+      <p>Please fill out the following questions</p> 
+      <p>to get started on your fitness journey</p>
+    </h4>
     <form class=fit-food-form>
       <!-- <div class="row">
         <div class="six columns">
@@ -25,12 +29,12 @@
         </div>
       </div> -->
       <div class="row">
-        <div class="six columns">
+        <div class="three columns">
           <label for="exampleRecipientInput">
             Meal Calorie Content: Breakfast
             <input type="checkbox">
           </label>
-          <select class="u-full-width" id="fitnessGoalsInput">
+          <select class="u-full-width custom-dropdown" id="fitnessGoalsInput">
             <option value="Option 1">300-600</option>
             <option value="Option 2">601-900</option>
             <option value="Option 3">901-1200</option>
@@ -38,9 +42,9 @@
         </div>
       </div>
       <div class="row">
-        <div class="six columns">
+        <div class="three columns">
           <label for="exampleRecipientInput">Base Protein</label>
-          <select class="u-full-width" id="mealPlanInput">
+          <select class="u-full-width custom-dropdown" id="mealPlanInput">
             <option value="Option 1">Eggs</option>
             <option value="Option 2">Oatmeal</option>
             <option value="Option 3">Chicken</option>
@@ -48,12 +52,12 @@
         </div>
       </div>
       <div class="row">
-        <div class="six columns">
+        <div class="three columns">
           <label for="exampleRecipientInput">
             Meal Calorie Content: Lunch
             <input type="checkbox">
           </label>
-          <select class="u-full-width" id="fitnessGoalsInput">
+          <select class="u-full-width custom-dropdown" id="fitnessGoalsInput">
             <option value="Option 1">300-600</option>
             <option value="Option 2">601-900</option>
             <option value="Option 3">901-1200</option>
@@ -61,9 +65,9 @@
         </div>
       </div>
       <div class="row">
-        <div class="six columns">
+        <div class="three columns">
           <label for="exampleRecipientInput">Base Protein</label>
-          <select class="u-full-width" id="mealPlanInput">
+          <select class="u-full-width custom-dropdown" id="mealPlanInput">
             <option value="Option 1">Chicken</option>
             <option value="Option 2">Beef</option>
             <option value="Option 3">Beans</option>
@@ -71,12 +75,12 @@
         </div>
       </div>
       <div class="row">
-        <div class="six columns">
+        <div class="three columns">
           <label for="exampleRecipientInput">
             Meal Calorie Content: Dinner
             <input type="checkbox">
           </label>
-          <select class="u-full-width" id="fitnessGoalsInput">
+          <select class="u-full-width custom-dropdown" id="fitnessGoalsInput">
             <option value="Option 1">300-600</option>
             <option value="Option 2">601-900</option>
             <option value="Option 3">901-1200</option>
@@ -84,9 +88,9 @@
         </div>
       </div>
       <div class="row">
-        <div class="six columns">
+        <div class="three columns">
           <label for="exampleRecipientInput">Base Protein</label>
-          <select class="u-full-width" id="mealPlanInput">
+          <select class="u-full-width custom-dropdown" id="mealPlanInput">
             <option value="Option 1">Chicken</option>
             <option value="Option 2">Beef</option>
             <option value="Option 3">Beans</option>
@@ -138,7 +142,7 @@
           <input type="checkbox">Waist
         </label>
       </section>
-        <input class="button-primary" type="submit" value="Submit">
+        <input class="button-submit" type="submit" value="Submit">
     </form>
 
   </body>
