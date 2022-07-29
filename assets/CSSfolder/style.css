@@ -38,6 +38,10 @@ h1 {
   justify-content: space-around;
 }
 
+.hidden {
+  display: none;
+}
+
 
 .button.button-submit,
 button.button-submit,
