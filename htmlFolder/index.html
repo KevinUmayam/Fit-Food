@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/assets/CSSfolder/normalize.css">
-    <link rel="stylesheet" href="/assets/CSSfolder/skeleton.css">
-    <link rel="stylesheet" href="/assets/CSSfolder/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/CSSfolder/normalize.css">
+    <link rel="stylesheet" href="../assets/CSSfolder/skeleton.css">
+    <link rel="stylesheet" href="../assets/CSSfolder/style.css">
+
+  
+
     <title>FitFood</title>
   </head>
 
@@ -29,12 +32,16 @@
         </div>
       </div> -->
       <div class="row">
-        <div class="three columns">
-          <label for="exampleRecipientInput">
+
+        <div class="six columns">
+          <label for="includeBreakfast">
+
             Meal Calorie Content: Breakfast
-            <input type="checkbox">
+            <input type="checkbox" id="includeBreakfast">
           </label>
-          <select class="u-full-width custom-dropdown" id="fitnessGoalsInput">
+
+          <select class="u-full-width" id="caloriesBreakfast">
+
             <option value="Option 1">300-600</option>
             <option value="Option 2">601-900</option>
             <option value="Option 3">901-1200</option>
@@ -44,7 +51,9 @@
       <div class="row">
         <div class="three columns">
           <label for="exampleRecipientInput">Base Protein</label>
-          <select class="u-full-width custom-dropdown" id="mealPlanInput">
+
+          <select class="u-full-width" id="baseBreakfast">
+
             <option value="Option 1">Eggs</option>
             <option value="Option 2">Oatmeal</option>
             <option value="Option 3">Chicken</option>
@@ -52,12 +61,16 @@
         </div>
       </div>
       <div class="row">
-        <div class="three columns">
-          <label for="exampleRecipientInput">
+
+        <div class="six columns">
+          <label for="includeLunch">
+
             Meal Calorie Content: Lunch
-            <input type="checkbox">
+            <input type="checkbox" id="includeLunch">
           </label>
-          <select class="u-full-width custom-dropdown" id="fitnessGoalsInput">
+
+          <select class="u-full-width" id="caloriesLunch">
+
             <option value="Option 1">300-600</option>
             <option value="Option 2">601-900</option>
             <option value="Option 3">901-1200</option>
@@ -67,7 +80,9 @@
       <div class="row">
         <div class="three columns">
           <label for="exampleRecipientInput">Base Protein</label>
-          <select class="u-full-width custom-dropdown" id="mealPlanInput">
+
+          <select class="u-full-width" id="baseLunch">
+
             <option value="Option 1">Chicken</option>
             <option value="Option 2">Beef</option>
             <option value="Option 3">Beans</option>
@@ -75,12 +90,16 @@
         </div>
       </div>
       <div class="row">
-        <div class="three columns">
-          <label for="exampleRecipientInput">
+
+        <div class="six columns">
+          <label for="includeDinner">
+
             Meal Calorie Content: Dinner
-            <input type="checkbox">
+            <input type="checkbox" id="includeDinner">
           </label>
-          <select class="u-full-width custom-dropdown" id="fitnessGoalsInput">
+
+          <select class="u-full-width" id="caloriesDinner">
+
             <option value="Option 1">300-600</option>
             <option value="Option 2">601-900</option>
             <option value="Option 3">901-1200</option>
@@ -90,7 +109,9 @@
       <div class="row">
         <div class="three columns">
           <label for="exampleRecipientInput">Base Protein</label>
-          <select class="u-full-width custom-dropdown" id="mealPlanInput">
+
+          <select class="u-full-width" id="baseDinner">
+
             <option value="Option 1">Chicken</option>
             <option value="Option 2">Beef</option>
             <option value="Option 3">Beans</option>
@@ -100,14 +121,14 @@
       <section class="columns">
         <label class="container custom-container-diet">
           <h5>Diet:</h5>
-          <input type="checkbox">Vegetarian
-          <input type="checkbox">Vegan
+          <input type="checkbox" id="vegetarian">Vegetarian
+          <input type="checkbox" id="vegan">Vegan
         </label>
         <label class="container custom-container-allergies">
           <h5>Allergies:</h5>
-          <input type="checkbox">Gluten-Free
-          <input type="checkbox">Dairy-Free
-          <input type="checkbox">Peanut-Free
+          <input type="checkbox" id="gluten">Gluten-Free
+          <input type="checkbox" id="dairy">Dairy-Free
+          <input type="checkbox" id="peanut">Peanut-Free
         </label>
       </section>
       <!-- <div class="row">
@@ -120,34 +141,15 @@
           </select>
         </div>
       </div> -->
-      <section class="columns">
-        <label class="container custom-container-diet">
-          <h5>Workout Type:</h5>
-          <input type="checkbox">Bodyweight
-          <input type="checkbox">Cable
-          <input type="checkbox">Barbells
-          <input type="checkbox">Gym Equipment
-        </label>
-        <label class="container custom-container-allergies">
-          <h5>Workout Zone:</h5>
-          <input type="checkbox">Upper Legs
-          <input type="checkbox">Lower Legs
-          <input type="checkbox">Upper Arms
-          <input type="checkbox">Lower Arms
-          <input type="checkbox">Waist
-          <input type="checkbox">Back
-          <input type="checkbox">Chest
-          <input type="checkbox">Cardio
-          <input type="checkbox">Shoulders
-          <input type="checkbox">Waist
-        </label>
-      </section>
-        <input class="button-submit" type="submit" value="Submit">
+
+        <input class="button-primary" type="submit" value="Submit" id="submit">
     </form>
 
   </body>
-  <script src="/assets/javascriptFolder/scripts.js"></script>
-  <script src="/Fit-Food/assets/javascriptFolder/edamam.js"></script>
+
+  <script src="../assets/javascriptFolder/edamam.js"></script>
 </html>
+
+
 
 
