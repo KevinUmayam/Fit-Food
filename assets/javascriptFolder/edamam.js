@@ -1,52 +1,13 @@
-var appid = '&app_id=e6094091';
-var appkey ='&app_key=998bd7f197846f5a6ef876a82bf64a36';
-var edamamurl = 'https://api.edamam.com/search?q=oats&app_id=e6094091&app_key=9885703d5ed639adced50ead66ba1a1c&mealtype=lunch&calories=500-700';
 
-var baseUrl = 'https://api.edamam.com/search?';
-var urlKeys = '&app_id=e6094091&app_key=9885703d5ed639adced50ead66ba1a1c';
 
 var submit = document.querySelector('#submit');
 
-//This will be the q= parameter
-var baseBreakfast;
-var baseLunch;
-var baseDinner;
-
-var includeBreakfast = document.querySelector('#includeBreakfast');
-// includeBreakfast.addEventListener('click', breakfast);
-function breakfast() {
-    if (includeBreakfast.checked == true) {
-        baseBreakfast = '&mealType=breakfast'
-        console.log(baseBreakfast);
-    }
-}
-
-var includeLunch = document.querySelector('#includeLunch');
-// includeLunch.addEventListener('click', lunch);
-function lunch() {
-    if (includeLunch.checked == true) {
-        baseLunch = '&mealType=lunch';
-        console.log(baseLunch);
-    }
-}
-
-var includeDinner = document.querySelector('#includeDinner');
-// includeDinner.addEventListener('click', dinner);
-function dinner() {
-    if (includeDinner.checked == true) {
-        baseDinner = '&mealType=dinner';
-        console.log(baseDinner);
-
-    }
-}
+//Breakfast for &calories, q= parameter
 
 
 var lowBreakfast;
 var midBreakfast;
 var highBreakfast;
-
-
-
 
 var calorieBreakfast = document.querySelector('#caloriesBreakfast');
 var calorieBreakfastVal = calorieBreakfast.value;
@@ -56,12 +17,18 @@ function breakfastcalorie() {
 
     if (calorieBreakfastVal === 'Option 1') {
         lowBreakfast = '&calories=300-600';
+        midBreakfast = '';
+        highBreakfast = '';
         console.log(lowBreakfast);
     } else if (calorieBreakfastVal === 'Option 2') {
         midBreakfast = '&calories=601-900';
+        lowBreakfast = '';
+        highBreakfast = '';
         console.log(midBreakfast);
     } else if (calorieBreakfastVal === 'Option 3') {
         highBreakfast = '&calories=901-1200';
+        lowBreakfast = '';
+        midBreakfast = '';
         console.log(highBreakfast);
     }
 }
@@ -70,21 +37,58 @@ var eggBreakfast;
 var oatBreakfast;
 var chickenBreakfast;
 
-var baseBreakfast = document.querySelector('#baseBreakfast');
-var baseBreakfastVal = baseBreakfast.value;
+var baseBreakfastType = document.querySelector('#baseBreakfast');
+var baseBreakfastVal = baseBreakfastType.value;
 function breakfastBase() {
-    var baseBreakfastVal = baseBreakfast.value;
+    var baseBreakfastVal = baseBreakfastType.value;
+
     if (baseBreakfastVal === 'Option 1') {
         eggBreakfast = 'q=eggs';
+        oatBreakfast = '';
+        chickenBreakfast = '';
         console.log(eggBreakfast);
     } else if (baseBreakfastVal === 'Option 2') {
         oatBreakfast = 'q=oats';
+        eggBreakfast = '';
+        chickenBreakfast = '';
         console.log(oatBreakfast);
     } else if (baseBreakfastVal === 'Option 3') {
         chickenBreakfast = 'q=chicken';
+        eggBreakfast = '';
+        oatBreakfast = '';
         console.log(chickenBreakfast);
     }
+   
 }
+
+var baseBreakfast;
+var includeBreakfast = document.querySelector('#includeBreakfast');
+// includeBreakfast.addEventListener('click', breakfast);
+function breakfast() {
+    if (includeBreakfast.checked == true) {
+        baseBreakfast = '&mealType=breakfast'
+        console.log(baseBreakfast);
+    } else {
+        return;
+    }
+    breakfastBase();
+    breakfastcalorie();
+    var testingBreakfastUrl = mainPartUrl + eggBreakfast + oatBreakfast + chickenBreakfast + mainUrlKeys + baseBreakfast + lowBreakfast + midBreakfast + highBreakfast;
+    console.log(testingBreakfastUrl);
+    function getApi() {
+        fetch(testingBreakfastUrl)
+            .then(function (response){
+                return response.json();
+            })
+            .then(function (data) {
+                console.log(data);
+            })
+    }
+    getApi();
+    
+}
+
+//Lunch &calories and q= parameters
 
 var lowLunch;
 var midLunch;
@@ -111,10 +115,10 @@ var chickenLunch;
 var beefLunch;
 var beansLunch;
 
-var baseLunch = document.querySelector('#baseLunch');
-var baseLunchVal = baseLunch.value;
+var baseLunchType = document.querySelector('#baseLunch');
+var baseLunchVal = baseLunchType.value;
 function lunchBase() {
-    var baseLunchVal = baseLunch.value;
+    var baseLunchVal = baseLunchType.value;
     if (baseLunchVal === 'Option 1') {
         chickenLunch = 'q=chicken';
         console.log(chickenLunch);
@@ -126,6 +130,23 @@ function lunchBase() {
         console.log(beansLunch);
     }
 }
+
+var baseLunch;
+var includeLunch = document.querySelector('#includeLunch');
+// includeLunch.addEventListener('click', lunch);
+function lunch() {
+    if (includeLunch.checked == true) {
+        baseLunch = '&mealtype=lunch';
+        console.log(baseLunch);
+    } else {
+        return;
+    }
+    lunchCalories();
+    lunchBase();
+}
+
+
+//Dinner &calories and q= parameters
 
 var caloriesDinner = document.querySelector('#caloriesDinner');
 var caloriesDinnerVal = caloriesDinner.value;
@@ -150,10 +171,10 @@ function dinnerCalories() {
 var chickenDinner;
 var beefDinner;
 var beansDinner;
-var baseDinner = document.querySelector('#baseDinner');
-var baseDinnerVal = baseDinner.value;
+var baseDinnerType = document.querySelector('#baseDinner');
+var baseDinnerVal = baseDinnerType.value;
 function dinnerBase() {
-    var baseDinnerVal = baseDinner.value;
+    var baseDinnerVal = baseDinnerType.value;
     if (baseDinnerVal === 'Option 1') {
         chickenDinner = 'q=chicken';
         console.log(chickenDinner);
@@ -166,6 +187,21 @@ function dinnerBase() {
     }
 }
 
+var baseDinner;
+var includeDinner = document.querySelector('#includeDinner');
+// includeDinner.addEventListener('click', dinner);
+function dinner() {
+    if (includeDinner.checked == true) {
+        baseDinner = '&mealtype=dinner';
+        console.log(baseDinner);
+    } else {
+        return;
+    }
+    dinnerCalories();
+    dinnerBase();
+}
+
+
 
 //These will be parameter restrictions
 var dietVegetarian;
@@ -176,6 +212,8 @@ function includeVegetarian() {
     if (vegetarian.checked === true) {
         dietVegetarian = '&health=vegetarian';
         console.log(dietVegetarian);
+    } else {
+        dietVegetarian = '';
     }
 }
 
@@ -184,6 +222,8 @@ function includeVegan() {
     if (vegan.checked === true) {
         dietVegan = '&health=vegan';
         console.log(dietVegan);
+    } else {
+        dietVegan = '';
     }
 }
 
@@ -199,6 +239,8 @@ function includeGluten() {
     if (gluten.checked === true) {
         allergyGluten = '&health=gluten';
         console.log(allergyGluten);
+    } else {
+        allergyGluten = '';
     }
 }
 
@@ -207,6 +249,8 @@ function includeDairy() {
     if (dairy.checked === true) {
         allergyDairy = '&health=dairy';
         console.log(allergyDairy);
+    } else {
+        allergyDairy = '';
     }
 }
 var peanut = document.querySelector('#peanut');
@@ -214,6 +258,8 @@ function includePeanut() {
     if (peanut.checked === true) {
         allergyPeanut = '&health=peanuts';
         console.log(allergyPeanut);
+    } else {
+        allergyPeanut = '';
     }
 }
 
@@ -223,8 +269,39 @@ function includePeanut() {
 
 
 
+
+
+
+var testButton = document.querySelector('#testButton');
+submit.addEventListener('click', function (test) {
+ 
+    test.preventDefault();
+    breakfast();
+    lunch();
+    dinner();
+    includeGluten();
+    includeDairy();
+    includePeanut();
+    includeVegetarian();
+    includeVegan();
+    
+});
+
+var appid = '&app_id=e6094091';
+var appkey ='&app_key=998bd7f197846f5a6ef876a82bf64a36';
+var edamamurl = 'https://api.edamam.com/search?q=oats&app_id=e6094091&app_key=9885703d5ed639adced50ead66ba1a1c&mealtype=lunch&calories=500-700';
+
+
+
+
+var mainPartUrl = 'https://api.edamam.com/search?';
+var mainUrlKeys = '&app_id=e6094091&app_key=9885703d5ed639adced50ead66ba1a1c';
+var testingBreakfastUrl = mainPartUrl + eggBreakfast + mainUrlKeys + baseBreakfast + lowBreakfast;
+
+
+
 function getApi() {
-    fetch(edamamurl)
+    fetch(testingBreakfastUrl)
         .then(function (response){
             return response.json();
         })
@@ -233,25 +310,3 @@ function getApi() {
         })
 }
 
-getApi();
-
-var testButton = document.querySelector('#testButton');
-testButton.addEventListener('click', test);
-// submit.addEventListener('click', test);
-function test() {
-    breakfast();
-    lunch();
-    dinner();
-    breakfastcalorie();
-    breakfastBase();
-    lunchBase();
-    lunchCalories();
-    dinnerCalories();
-    dinnerBase();
-    includeGluten();
-    includeDairy();
-    includePeanut();
-    includeVegetarian();
-    includeVegan();
-
-}
