@@ -5,8 +5,17 @@ const options = {
     "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
   },
 };
-
+//fetch request for excersize db
 fetch("https://exercisedb.p.rapidapi.com/exercises", options)
   .then((response) => response.json())
-  .then((response) => console.log(response))
-  .catch((err) => console.error(err));
+  .then((infoArray) => {
+    console.log(infoArray);
+    //for loop to target all the things we need for the drop menu
+
+    for (let i = 0; i < infoArray.length; i++) {
+      //   let bodypartEl = infoArray[i].bodyPart;
+      //   console.log(bodypartEl);
+      // let equipmentEl = infoArray[i].equipment;
+      // console.log(equipmentEl);
+    }
+  });
