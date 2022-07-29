@@ -28,7 +28,7 @@ h1 {
   margin-bottom: 80px;
 }
 
-.custom-dropdown {
+#caloriesBreakfast, #baseBreakfast, #caloriesLunch, #baseLunch, #caloriesDinner, #baseDinner {
   background-color: #7f5af0;
 }
 
