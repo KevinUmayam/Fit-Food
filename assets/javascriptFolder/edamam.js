@@ -1,6 +1,68 @@
-
-
 var submit = document.querySelector('#submit');
+
+//These will be parameter restrictions
+var dietVegetarian;
+var dietVegan;
+
+var vegetarian = document.querySelector('#vegetarian');
+function includeVegetarian() {
+    if (vegetarian.checked === true) {
+        dietVegetarian = '&health=vegetarian';
+        console.log(dietVegetarian);
+    } else {
+        dietVegetarian = '';
+    }
+}
+
+var vegan = document.querySelector('#vegan');
+function includeVegan() {
+    if (vegan.checked === true) {
+        dietVegan = '&health=vegan';
+        console.log(dietVegan);
+    } else {
+        dietVegan = '';
+    }
+}
+
+
+
+//These will be allergy restrictions
+var allergyGluten;
+var allergyDairy;
+var allergyPeanut;
+
+//Actually low carb
+var gluten = document.querySelector('#gluten');
+function includeGluten() {
+    if (gluten.checked === true) {
+        allergyGluten = '&diet=low-carb';
+        console.log(allergyGluten);
+    } else {
+        allergyGluten = '';
+    }
+}
+
+//Actually low fat
+var dairy = document.querySelector('#dairy');
+function includeDairy() {
+    if (dairy.checked === true) {
+        allergyDairy = '&diet=low-fat';
+        console.log(allergyDairy);
+    } else {
+        allergyDairy = '';
+    }
+}
+
+//Actually high protein
+var peanut = document.querySelector('#peanut');
+function includePeanut() {
+    if (peanut.checked === true) {
+        allergyPeanut = '&diet=high-protein';
+        console.log(allergyPeanut);
+    } else {
+        allergyPeanut = '';
+    }
+}
 
 //Breakfast for &calories, q= parameter
 
@@ -73,18 +135,30 @@ function breakfast() {
     }
     breakfastBase();
     breakfastcalorie();
-    var testingBreakfastUrl = mainPartUrl + eggBreakfast + oatBreakfast + chickenBreakfast + mainUrlKeys + baseBreakfast + lowBreakfast + midBreakfast + highBreakfast;
+    includeVegetarian();
+    includeVegan();
+    includeGluten();
+    includeDairy();
+    includePeanut();
+    var testingBreakfastUrl = mainPartUrl + eggBreakfast + oatBreakfast + chickenBreakfast + mainUrlKeys + baseBreakfast + dietVegetarian + dietVegan + allergyGluten + allergyPeanut + allergyDairy + lowBreakfast + midBreakfast + highBreakfast;
     console.log(testingBreakfastUrl);
-    function getApi() {
+    function getBreakfastApi() {
         fetch(testingBreakfastUrl)
             .then(function (response){
                 return response.json();
             })
             .then(function (data) {
                 console.log(data);
+                if (data.more === false) {
+                    console.log("Your breakfast search has returned zero recipes, please modify your search criteria");
+                    return;
+                }
+                var randomNumber = Math.floor(Math.random() * 10);
+                console.log(data.hits[randomNumber].recipe.label);
+                console.log(data.hits[randomNumber].recipe.shareAs);
             })
     }
-    getApi();
+    getBreakfastApi();
     
 }
 
@@ -101,12 +175,18 @@ function lunchCalories() {
     var calorieLunchVal = calorieLunch.value;
     if (calorieLunchVal === 'Option 1') {
         lowLunch = '&calories=300-600';
+        midLunch = '';
+        highLunch = '';
         console.log(lowLunch);
     } else if (calorieLunchVal === 'Option 2') {
         midLunch = '&calories=601-900';
+        lowLunch = '';
+        highLunch = '';
         console.log(midLunch);
     } else if (calorieLunchVal === 'Option 3') {
         highLunch = '&calories=901-1200';
+        lowLunch = '';
+        midLunch = '';
         console.log(highLunch);
     }
 }
@@ -121,12 +201,18 @@ function lunchBase() {
     var baseLunchVal = baseLunchType.value;
     if (baseLunchVal === 'Option 1') {
         chickenLunch = 'q=chicken';
+        beefLunch = '';
+        beansLunch = '';
         console.log(chickenLunch);
     } else if (baseLunchVal === 'Option 2') {
         beefLunch = 'q=beef';
+        chickenLunch = '';
+        beansLunch = '';
         console.log(beefLunch);
     } else if (baseLunchVal === 'Option 3') {
         beansLunch = 'q=beans';
+        chickenLunch = '';
+        beefLunch = '';
         console.log(beansLunch);
     }
 }
@@ -143,6 +229,30 @@ function lunch() {
     }
     lunchCalories();
     lunchBase();
+    includeVegetarian();
+    includeVegan();
+    includeGluten();
+    includeDairy();
+    includePeanut();
+    var testingLunchUrl = mainPartUrl + chickenLunch + beefLunch + beansLunch + mainUrlKeys + baseLunch + dietVegetarian + dietVegan + allergyGluten + allergyPeanut + allergyDairy + lowLunch + midLunch + highLunch;
+    console.log(testingLunchUrl);
+    function getLunchApi() {
+        fetch(testingLunchUrl)
+            .then(function (response){
+                return response.json();
+            })
+            .then(function (data) {
+                console.log(data);
+                if (data.more === false) {
+                    console.log("Your lunch search has returned zero recipes, please modify your search criteria");
+                    return;
+                }
+                var randomNumber = Math.floor(Math.random() * 10);
+                console.log(data.hits[randomNumber].recipe.label);
+                console.log(data.hits[randomNumber].recipe.shareAs);
+            })
+    }
+    getLunchApi();
 }
 
 
@@ -158,12 +268,18 @@ function dinnerCalories() {
     var caloriesDinnerVal = caloriesDinner.value;
     if (caloriesDinnerVal === 'Option 1') {
         lowDinner = '&calories=300-600';
+        midDinner = '';
+        highDinner = '';
         console.log(lowDinner);
     } else if (caloriesDinnerVal === 'Option 2') {
         midDinner = '&calories=601-900';
+        lowDinner = '';
+        highDinner = '';
         console.log(midDinner);
     } else if (caloriesDinnerVal === 'Option 3') {
         highDinner = '&calories=901-1200';
+        lowDinner = '';
+        midDinner = '';
         console.log(highDinner);
     }
 }
@@ -177,12 +293,18 @@ function dinnerBase() {
     var baseDinnerVal = baseDinnerType.value;
     if (baseDinnerVal === 'Option 1') {
         chickenDinner = 'q=chicken';
+        beefDinner = '';
+        beansDinner = '';
         console.log(chickenDinner);
     } else if (baseDinnerVal === 'Option 2') {
         beefDinner = 'q=beef';
+        chickenDinner = '';
+        beansDinner = '';
         console.log(beefDinner);
     } else if (baseDinnerVal === 'Option 3') {
         beansDinner = 'q=beans';
+        chickenDinner = '';
+        beefDinner = '';
         console.log(beansDinner);
     }
 }
@@ -199,69 +321,39 @@ function dinner() {
     }
     dinnerCalories();
     dinnerBase();
-}
+    includeVegetarian();
+    includeVegan();
+    includeGluten();
+    includeDairy();
+    includePeanut();
 
+    var testingDinnerUrl = mainPartUrl + chickenDinner + beefDinner + beansDinner + mainUrlKeys + baseDinner + dietVegetarian + dietVegan + allergyGluten + allergyPeanut + allergyDairy + lowDinner + midDinner + highDinner;
+    console.log(testingDinnerUrl);
+    function getDinnerApi() {
+        fetch(testingDinnerUrl)
+            .then(function (response){
+                return response.json();
+            })
+            .then(function (data) {
+                console.log(data);
+                if (data.more === false) {
+                    console.log("Your dinner search has returned zero recipes, please modify your search criteria");
+                    return;
+                }
+                var randomNumber = Math.floor(Math.random() * 10);
+                var recipeName = data.hits[randomNumber].recipe.label;
+                console.log(recipeName);
+                var recipeUrl = data.hits[randomNumber].recipe.shareAs;
+                console.log(recipeUrl);
 
-
-//These will be parameter restrictions
-var dietVegetarian;
-var dietVegan;
-
-var vegetarian = document.querySelector('#vegetarian');
-function includeVegetarian() {
-    if (vegetarian.checked === true) {
-        dietVegetarian = '&health=vegetarian';
-        console.log(dietVegetarian);
-    } else {
-        dietVegetarian = '';
+            })
     }
-}
-
-var vegan = document.querySelector('#vegan');
-function includeVegan() {
-    if (vegan.checked === true) {
-        dietVegan = '&health=vegan';
-        console.log(dietVegan);
-    } else {
-        dietVegan = '';
-    }
+    getDinnerApi();
 }
 
 
 
-//These will be allergy restrictions
-var allergyGluten;
-var allergyDairy;
-var allergyPeanut;
 
-var gluten = document.querySelector('#gluten');
-function includeGluten() {
-    if (gluten.checked === true) {
-        allergyGluten = '&health=gluten';
-        console.log(allergyGluten);
-    } else {
-        allergyGluten = '';
-    }
-}
-
-var dairy = document.querySelector('#dairy');
-function includeDairy() {
-    if (dairy.checked === true) {
-        allergyDairy = '&health=dairy';
-        console.log(allergyDairy);
-    } else {
-        allergyDairy = '';
-    }
-}
-var peanut = document.querySelector('#peanut');
-function includePeanut() {
-    if (peanut.checked === true) {
-        allergyPeanut = '&health=peanuts';
-        console.log(allergyPeanut);
-    } else {
-        allergyPeanut = '';
-    }
-}
 
 
 
