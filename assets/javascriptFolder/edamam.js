@@ -1,5 +1,26 @@
 var submit = document.querySelector('#submit');
 
+
+//Modal
+var spanModal = document.querySelector('.closeModal');
+var modal = document.querySelector('.modal');
+
+function showModal() {
+    modal.setAttribute('style', 'display: block;');
+    // var h1 = document.createElement('h1');
+    // var lastOption = document.getElementsByTagName('h1')[2];
+    // h1.textContent = 'hello';
+    // lastOption.appendChild(h1);
+    // var modalTextBreakfast = document.createElement('h1');
+    // var position = document.querySelector('.modalPlaceholder');
+    // modalTextBreakfast.textContent = 'Your breakfast search has returned zero recipes, please modify your search criteria.';
+    // position.appendChild(modalTextBreakfast);
+}
+
+function closeModal() {
+    modal.setAttribute('style', 'display: none');
+}
+
 //These will be parameter restrictions
 var dietVegetarian;
 var dietVegan;
@@ -151,6 +172,9 @@ function breakfast() {
                 console.log(data);
                 if (data.more === false) {
                     console.log("Your breakfast search has returned zero recipes, please modify your search criteria");
+                    showModal();
+                    var modalBreakfastText = document.querySelector('#modalBreakfast');
+                    modalBreakfastText.setAttribute('style', 'display: block;');
                     return;
                 }
                 var randomNumber = Math.floor(Math.random() * 10);
@@ -245,6 +269,9 @@ function lunch() {
                 console.log(data);
                 if (data.more === false) {
                     console.log("Your lunch search has returned zero recipes, please modify your search criteria");
+                    showModal();
+                    var modalLunchText = document.querySelector('#modalLunch');
+                    modalLunchText.setAttribute('style', 'display: block;');
                     return;
                 }
                 var randomNumber = Math.floor(Math.random() * 10);
@@ -338,6 +365,9 @@ function dinner() {
                 console.log(data);
                 if (data.more === false) {
                     console.log("Your dinner search has returned zero recipes, please modify your search criteria");
+                    showModal();
+                    var modalDinnerText = document.querySelector('#modalDinner');
+                    modalDinnerText.setAttribute('style', 'display: block;');
                     return;
                 }
                 var randomNumber = Math.floor(Math.random() * 10);
