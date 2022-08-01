@@ -1,5 +1,11 @@
-//dropdown options
-var dropdownEl = document.querySelector("#muscleTarget");
+//dropdown options for each submit button
+var dropdownEl1 = document.querySelector("#muscleTarget1");
+var dropdownEl2 = document.querySelector("#muscleTarget2");
+var dropdownEl3 = document.querySelector("#muscleTarget3");
+var dropdownEl4 = document.querySelector("#muscleTarget4");
+var dropdownEl5 = document.querySelector("#muscleTarget5");
+var dropdownEl6 = document.querySelector("#muscleTarget6");
+var dropdownEl7 = document.querySelector("#muscleTarget7");
 //submit button
 
 var submitBtn1 = document.querySelector("#exercise-submit1");
@@ -15,28 +21,28 @@ var muscle = "";
 //element to which we will append created elements
 var intructionContainerEL = document.querySelector("#hide-stuff");
 
-// function to know which body part to show
-function muscleSlection() {
-  if (dropdownEl.value === "biceps") {
+// function to know which body part to fetch
+function muscleSelection(target) {
+  if (target.value === "biceps") {
     muscle = "biceps";
     console.log("biceps");
-  } else if (dropdownEl.value === "triceps") {
+  } else if (target.value === "triceps") {
     muscle = "triceps";
-  } else if (dropdownEl.value === "forearms") {
+  } else if (target.value === "forearms") {
     muscle = "forearms";
-  } else if (dropdownEl.value === "calves") {
+  } else if (target.value === "calves") {
     muscle = "calves";
-  } else if (dropdownEl.value === "quadriceps") {
+  } else if (target.value === "quadriceps") {
     muscle = "quadriceps";
-  } else if (dropdownEl.value === "abdominals") {
+  } else if (target.value === "abdominals") {
     muscle = "abdominals";
-  } else if (dropdownEl.value === "chest") {
+  } else if (target.value === "chest") {
     muscle = "chest";
-  } else if (dropdownEl.value === "lower_back") {
+  } else if (target.value === "lower_back") {
     muscle = "lower_back";
-  } else if (dropdownEl.value === "middle_back") {
+  } else if (target.value === "middle_back") {
     muscle = "middle_back";
-  } else if (dropdownEl.value === "lats") {
+  } else if (target.value === "lats") {
     muscle = "lats";
   }
 }
@@ -52,8 +58,8 @@ function getApi() {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-
-      //for look to create and display instruction boxes.
+      var numberList = [1, 2, 3, 4, 5, 6, 7];
+      //to create and display instruction boxes.
       for (let i = 0; i < data.length; i++) {
         //name variable
         var workoutName = data[i].name;
@@ -66,7 +72,7 @@ function getApi() {
         // create the H1 elements that will contain the name titles
         var nameEl = document.createElement("h1");
         nameEl.setAttribute("class", "nameStyling");
-        nameEl.innerText = workoutName;
+        nameEl.innerText = numberList[i] + ". " + workoutName;
         //create h2 with instructions
         var instructionsEl = document.createElement("h2");
         instructionsEl.setAttribute("class", "instructionStyling");
@@ -76,63 +82,58 @@ function getApi() {
         workoutDiv.appendChild(instructionsEl);
         intructionContainerEL.appendChild(workoutDiv);
       }
+      localStorage.getItem(muscle);
+      //setting data to local storage
+      localStorage.setItem(muscle, JSON.stringify(data));
     });
 }
-
 //click event excecutes functions
 
 submitBtn1.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log(dropdownEl.value);
   console.log("hello");
-  muscleSlection();
+  muscleSelection(dropdownEl1);
   getApi();
 });
 
 submitBtn2.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log(dropdownEl.value);
   console.log("hello");
-  muscleSlection();
+  muscleSelection(dropdownEl2);
   getApi();
 });
 
 submitBtn3.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log(dropdownEl.value);
   console.log("hello");
-  muscleSlection();
+  muscleSelection(dropdownEl3);
   getApi();
 });
 
 submitBtn4.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log(dropdownEl.value);
   console.log("hello");
-  muscleSlection();
+  muscleSelection(dropdownEl4);
   getApi();
 });
 
 submitBtn5.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log(dropdownEl.value);
   console.log("hello");
-  muscleSlection();
+  muscleSelection(dropdownEl5);
   getApi();
 });
 
 submitBtn6.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log(dropdownEl.value);
   console.log("hello");
-  muscleSlection();
+  muscleSelection(dropdownEl6);
   getApi();
 });
 
 submitBtn7.addEventListener("click", function (e) {
   e.preventDefault();
-  console.log(dropdownEl.value);
   console.log("hello");
-  muscleSlection();
+  muscleSelection(dropdownEl7);
   getApi();
 });
