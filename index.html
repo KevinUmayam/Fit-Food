@@ -147,6 +147,21 @@
         <input class="button-primary" type="submit" value="Submit" id="submit" onclick="window.location.href='/htmlFolder/canlendar.html';">
     </form>
 
+    <!-- Added by Charlie for Modal 7/29-->
+    <div class="modal">
+      <div class="modalContent">
+          <div class="modalHeader">
+              <span class="closeModal" onclick="closeModal()">&times;</span>
+          </div>
+          <div class="modalPlaceholder">
+            <h1 id="modalBreakfast" style="display: none;">Your breakfast search has returned zero recipes, please modify your search criteria.</h1>
+            <h1 id="modalLunch" style="display: none;">Your lunch search has returned zero recipes, please modify your search criteria.</h1>
+            <h1 id="modalDinner" style="display: none;">Your dinner search has returned zero recipes, please modify your search criteria.</h1>
+          </div>
+          <div class="modalFooter"></div>
+      </div>
+    </div>
+
   </body>
 
   <script src="./assets/javascriptFolder/edamam.js"></script>
