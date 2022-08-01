@@ -1,10 +1,20 @@
 //dropdown options
 var dropdownEl = document.querySelector("#muscleTarget");
 //submit button
-var submitBtn = document.querySelector("#exercise-submit");
+
+var submitBtn1 = document.querySelector("#exercise-submit1");
+var submitBtn2 = document.querySelector("#exercise-submit2");
+var submitBtn3 = document.querySelector("#exercise-submit3");
+var submitBtn4 = document.querySelector("#exercise-submit4");
+var submitBtn5 = document.querySelector("#exercise-submit5");
+var submitBtn6 = document.querySelector("#exercise-submit6");
+var submitBtn7 = document.querySelector("#exercise-submit7");
+
 var muscle = "";
+
 //element to which we will append created elements
 var intructionContainerEL = document.querySelector("#hide-stuff");
+
 // function to know which body part to show
 function muscleSlection() {
   if (dropdownEl.value === "biceps") {
@@ -70,7 +80,56 @@ function getApi() {
 }
 
 //click event excecutes functions
-submitBtn.addEventListener("click", function (e) {
+
+submitBtn1.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log(dropdownEl.value);
+  console.log("hello");
+  muscleSlection();
+  getApi();
+});
+
+submitBtn2.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log(dropdownEl.value);
+  console.log("hello");
+  muscleSlection();
+  getApi();
+});
+
+submitBtn3.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log(dropdownEl.value);
+  console.log("hello");
+  muscleSlection();
+  getApi();
+});
+
+submitBtn4.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log(dropdownEl.value);
+  console.log("hello");
+  muscleSlection();
+  getApi();
+});
+
+submitBtn5.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log(dropdownEl.value);
+  console.log("hello");
+  muscleSlection();
+  getApi();
+});
+
+submitBtn6.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log(dropdownEl.value);
+  console.log("hello");
+  muscleSlection();
+  getApi();
+});
+
+submitBtn7.addEventListener("click", function (e) {
   e.preventDefault();
   console.log(dropdownEl.value);
   console.log("hello");
