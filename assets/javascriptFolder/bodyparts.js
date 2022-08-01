@@ -21,9 +21,11 @@ var muscle = "";
 //element to which we will append created elements
 var intructionContainerEL = document.querySelector("#hide-stuff");
 
+
 // function to know which body part to fetch
 function muscleSelection(target) {
   if (target.value === "biceps") {
+
     muscle = "biceps";
     console.log("biceps");
   } else if (target.value === "triceps") {
@@ -91,43 +93,55 @@ function getApi() {
 
 submitBtn1.addEventListener("click", function (e) {
   e.preventDefault();
+
   console.log("hello");
   muscleSelection(dropdownEl1);
+
   getApi();
 });
 
 submitBtn2.addEventListener("click", function (e) {
   e.preventDefault();
+
   console.log("hello");
   muscleSelection(dropdownEl2);
+
   getApi();
 });
 
 submitBtn3.addEventListener("click", function (e) {
   e.preventDefault();
+
   console.log("hello");
   muscleSelection(dropdownEl3);
+
   getApi();
 });
 
 submitBtn4.addEventListener("click", function (e) {
   e.preventDefault();
+
   console.log("hello");
   muscleSelection(dropdownEl4);
+
   getApi();
 });
 
 submitBtn5.addEventListener("click", function (e) {
   e.preventDefault();
+
   console.log("hello");
   muscleSelection(dropdownEl5);
+
   getApi();
 });
 
 submitBtn6.addEventListener("click", function (e) {
   e.preventDefault();
+
   console.log("hello");
   muscleSelection(dropdownEl6);
+
   getApi();
 });
 
