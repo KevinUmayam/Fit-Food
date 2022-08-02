@@ -35,21 +35,3 @@ function meal(name, url, letter) {
     }
 }
 
-function breakfast() {
-    if (breakfastName.length === 0) {
-        return;
-    } else {
-
-        for (var i = 0; i < 7; i++) {
-            var breakfast = document.getElementsByClassName('b-ttl');
-            breakfast[i].textContent = breakfastName[i];
-            var breakfastRecipe = document.getElementsByClassName('b-btn');
-            var breakfastButton = document.createElement('button');
-            breakfastButton.textContent = 'Click for recipe';
-            var aBreakfast = document.createElement('a');
-            aBreakfast.href = breakfastUrl[i];
-            aBreakfast.appendChild(breakfastButton);
-            breakfastRecipe[i].appendChild(aBreakfast);
-        }
-   }
-}
