@@ -4,9 +4,13 @@ var submit = document.querySelector('#submit');
 //Modal
 var spanModal = document.querySelector('.closeModal');
 var modal = document.querySelector('.modal');
+var runModal;
+var lunchModal;
+var dinnerModal;
 
 function showModal() {
     modal.setAttribute('style', 'display: block;');
+    runModal = false;
     // var h1 = document.createElement('h1');
     // var lastOption = document.getElementsByTagName('h1')[2];
     // h1.textContent = 'hello';
@@ -19,6 +23,7 @@ function showModal() {
 
 function closeModal() {
     modal.setAttribute('style', 'display: none');
+    window.location.replace('./index.html');
 }
 
 //These will be parameter restrictions
@@ -144,6 +149,20 @@ function breakfastBase() {
    
 }
 
+var breakfastQueriesName1;
+var breakfastQueriesName2;
+var breakfastQueriesName3;
+var breakfastQueriesName4;
+var breakfastQueriesName5;
+var breakfastQueriesName6;
+var breakfastQueriesName7;
+var breakfastQueriesUrl1;
+var breakfastQueriesUrl2;
+var breakfastQueriesUrl3;
+var breakfastQueriesUrl4;
+var breakfastQueriesUrl5;
+var breakfastQueriesUrl6;
+var breakfastQueriesUrl7;
 var baseBreakfast;
 var includeBreakfast = document.querySelector('#includeBreakfast');
 // includeBreakfast.addEventListener('click', breakfast);
@@ -163,30 +182,76 @@ function breakfast() {
     includePeanut();
     var testingBreakfastUrl = mainPartUrl + eggBreakfast + oatBreakfast + chickenBreakfast + mainUrlKeys + baseBreakfast + dietVegetarian + dietVegan + allergyGluten + allergyPeanut + allergyDairy + lowBreakfast + midBreakfast + highBreakfast;
     console.log(testingBreakfastUrl);
+
     function getBreakfastApi() {
-        fetch(testingBreakfastUrl)
+        return fetch(testingBreakfastUrl)
             .then(function (response){
                 return response.json();
             })
             .then(function (data) {
                 console.log(data);
                 if (data.more === false) {
+                    breakfastModal = 'goose';
                     console.log("Your breakfast search has returned zero recipes, please modify your search criteria");
                     showModal();
                     var modalBreakfastText = document.querySelector('#modalBreakfast');
                     modalBreakfastText.setAttribute('style', 'display: block;');
                     return;
                 }
-                var randomNumber = Math.floor(Math.random() * 10);
-                console.log(data.hits[randomNumber].recipe.label);
-                console.log(data.hits[randomNumber].recipe.shareAs);
+                // var randomNumber = Math.floor(Math.random() * 10);
+                for (i = 0; i < 7; i++) {
+                    breakfastQueriesName1 = '&breakfastName=' + data.hits[0].recipe.label;
+                    breakfastQueriesName2 = '&breakfastName=' + data.hits[1].recipe.label;
+                    breakfastQueriesName3 = '&breakfastName=' + data.hits[2].recipe.label;
+                    breakfastQueriesName4 = '&breakfastName=' + data.hits[3].recipe.label;
+                    breakfastQueriesName5 = '&breakfastName=' + data.hits[4].recipe.label;
+                    breakfastQueriesName6 = '&breakfastName=' + data.hits[5].recipe.label;
+                    breakfastQueriesName7 = '&breakfastName=' + data.hits[6].recipe.label;
+
+                 
+                    breakfastQueriesUrl1 = '&breakfastUrl=' + data.hits[0].recipe.shareAs;
+                    breakfastQueriesUrl2 = '&breakfastUrl=' + data.hits[1].recipe.shareAs;
+                    breakfastQueriesUrl3 = '&breakfastUrl=' + data.hits[2].recipe.shareAs;
+                    breakfastQueriesUrl4 = '&breakfastUrl=' + data.hits[3].recipe.shareAs;
+                    breakfastQueriesUrl5 = '&breakfastUrl=' + data.hits[4].recipe.shareAs;
+                    breakfastQueriesUrl6 = '&breakfastUrl=' + data.hits[5].recipe.shareAs;
+                    breakfastQueriesUrl7 = '&breakfastUrl=' + data.hits[6].recipe.shareAs;
+                }
+                console.log(breakfastQueriesName1 + breakfastQueriesUrl1);
+
+                // console.log(data.hits[randomNumber].recipe.label);
+                // console.log(data.hits[randomNumber].recipe.shareAs);
+                // var breakfast1 = document.querySelector('#b-ttl-one');
+                // breakfast1.textContent = data.hits[randomNumber].recipe.label;
+                // var breakfast1recipe = document.querySelector('#b-btn-one');
+                // var breakfastButton = document.createElement('button');
+                // var aBreakfast = document.createElement('a');
+                // aBreakfast.href = data.hits[randomNumber].recipe.shareAs;
+                // breakfastButton.appendChild(aBreakfast);
+                // breakfast1recipe.appendChild(breakfastButton);
             })
     }
-    getBreakfastApi();
+    return getBreakfastApi();
     
 }
 
 //Lunch &calories and q= parameters
+
+var lunchQueriesNames1;
+var lunchQueriesNames2;
+var lunchQueriesNames3;
+var lunchQueriesNames4;
+var lunchQueriesNames5;
+var lunchQueriesNames6;
+var lunchQueriesNames7;
+var lunchQueriesUrl1;
+var lunchQueriesUrl2;
+var lunchQueriesUrl3;
+var lunchQueriesUrl4;
+var lunchQueriesUrl5;
+var lunchQueriesUrl6;
+var lunchQueriesUrl7;
+
 
 var lowLunch;
 var midLunch;
@@ -261,7 +326,7 @@ function lunch() {
     var testingLunchUrl = mainPartUrl + chickenLunch + beefLunch + beansLunch + mainUrlKeys + baseLunch + dietVegetarian + dietVegan + allergyGluten + allergyPeanut + allergyDairy + lowLunch + midLunch + highLunch;
     console.log(testingLunchUrl);
     function getLunchApi() {
-        fetch(testingLunchUrl)
+        return fetch(testingLunchUrl)
             .then(function (response){
                 return response.json();
             })
@@ -274,16 +339,49 @@ function lunch() {
                     modalLunchText.setAttribute('style', 'display: block;');
                     return;
                 }
-                var randomNumber = Math.floor(Math.random() * 10);
-                console.log(data.hits[randomNumber].recipe.label);
-                console.log(data.hits[randomNumber].recipe.shareAs);
+                // var randomNumber = Math.floor(Math.random() * 10);
+                for (i = 0; i < 7; i++) {
+                    lunchQueriesNames1 = '&lunchName=' + data.hits[0].recipe.label;
+                    lunchQueriesNames2 = '&lunchName=' + data.hits[1].recipe.label;
+                    lunchQueriesNames3 = '&lunchName=' + data.hits[2].recipe.label;
+                    lunchQueriesNames4 = '&lunchName=' + data.hits[3].recipe.label;
+                    lunchQueriesNames5 = '&lunchName=' + data.hits[4].recipe.label;
+                    lunchQueriesNames6 = '&lunchName=' + data.hits[5].recipe.label;
+                    lunchQueriesNames7 = '&lunchName=' + data.hits[6].recipe.label;
+
+                 
+                    lunchQueriesUrl1 = '&lunchUrl=' + data.hits[0].recipe.shareAs;
+                    lunchQueriesUrl2 = '&lunchUrl=' + data.hits[1].recipe.shareAs;
+                    lunchQueriesUrl3 = '&lunchUrl=' + data.hits[2].recipe.shareAs;
+                    lunchQueriesUrl4 = '&lunchUrl=' + data.hits[3].recipe.shareAs;
+                    lunchQueriesUrl5 = '&lunchUrl=' + data.hits[4].recipe.shareAs;
+                    lunchQueriesUrl6 = '&lunchUrl=' + data.hits[5].recipe.shareAs;
+                    lunchQueriesUrl7 = '&lunchUrl=' + data.hits[6].recipe.shareAs;
+                }
+                // console.log(data.hits[randomNumber].recipe.label);
+                // console.log(data.hits[randomNumber].recipe.shareAs);
             })
     }
-    getLunchApi();
+    return getLunchApi();
 }
 
 
 //Dinner &calories and q= parameters
+
+var dinnerQueriesNames1;
+var dinnerQueriesNames2;
+var dinnerQueriesNames3;
+var dinnerQueriesNames4;
+var dinnerQueriesNames5;
+var dinnerQueriesNames6;
+var dinnerQueriesNames7;
+var dinnerQueriesUrl1;
+var dinnerQueriesUrl2;
+var dinnerQueriesUrl3;
+var dinnerQueriesUrl4;
+var dinnerQueriesUrl5;
+var dinnerQueriesUrl6;
+var dinnerQueriesUrl7;
 
 var caloriesDinner = document.querySelector('#caloriesDinner');
 var caloriesDinnerVal = caloriesDinner.value;
@@ -357,7 +455,7 @@ function dinner() {
     var testingDinnerUrl = mainPartUrl + chickenDinner + beefDinner + beansDinner + mainUrlKeys + baseDinner + dietVegetarian + dietVegan + allergyGluten + allergyPeanut + allergyDairy + lowDinner + midDinner + highDinner;
     console.log(testingDinnerUrl);
     function getDinnerApi() {
-        fetch(testingDinnerUrl)
+        return fetch(testingDinnerUrl)
             .then(function (response){
                 return response.json();
             })
@@ -370,44 +468,52 @@ function dinner() {
                     modalDinnerText.setAttribute('style', 'display: block;');
                     return;
                 }
-                var randomNumber = Math.floor(Math.random() * 10);
-                var recipeName = data.hits[randomNumber].recipe.label;
-                console.log(recipeName);
-                var recipeUrl = data.hits[randomNumber].recipe.shareAs;
-                console.log(recipeUrl);
+                // var randomNumber = Math.floor(Math.random() * 10);
+                // var recipeName = data.hits[randomNumber].recipe.label;
+                // console.log(recipeName);
+                // var recipeUrl = data.hits[randomNumber].recipe.shareAs;
+                // console.log(recipeUrl);
+                for (i = 0; i < 7; i++) {
+                    dinnerQueriesNames1 = '&dinnerName=' + data.hits[0].recipe.label;
+                    dinnerQueriesNames2 = '&dinnerName=' + data.hits[1].recipe.label;
+                    dinnerQueriesNames3 = '&dinnerName=' + data.hits[2].recipe.label;
+                    dinnerQueriesNames4 = '&dinnerName=' + data.hits[3].recipe.label;
+                    dinnerQueriesNames5 = '&dinnerName=' + data.hits[4].recipe.label;
+                    dinnerQueriesNames6 = '&dinnerName=' + data.hits[5].recipe.label;
+                    dinnerQueriesNames7 = '&dinnerName=' + data.hits[6].recipe.label;
 
+                
+                    dinnerQueriesUrl1 = '&dinnerUrl=' + data.hits[0].recipe.shareAs;
+                    dinnerQueriesUrl2 = '&dinnerUrl=' + data.hits[1].recipe.shareAs;
+                    dinnerQueriesUrl3 = '&dinnerUrl=' + data.hits[2].recipe.shareAs;
+                    dinnerQueriesUrl4 = '&dinnerUrl=' + data.hits[3].recipe.shareAs;
+                    dinnerQueriesUrl5 = '&dinnerUrl=' + data.hits[4].recipe.shareAs;
+                    dinnerQueriesUrl6 = '&dinnerUrl=' + data.hits[5].recipe.shareAs;
+                    dinnerQueriesUrl7 = '&dinnerUrl=' + data.hits[6].recipe.shareAs;
+                }
+                
             })
     }
-    getDinnerApi();
+    return getDinnerApi();
 }
 
 
 
+// On submit button
 
 
-
-
-
-
-
-
-
-
-
-var testButton = document.querySelector('#testButton');
+var submit = document.querySelector('#submit');
 submit.addEventListener('click', function (test) {
  
     test.preventDefault();
-    breakfast();
-    lunch();
-    dinner();
-    includeGluten();
-    includeDairy();
-    includePeanut();
-    includeVegetarian();
-    includeVegan();
-    
+    Promise.all([breakfast(), lunch(), dinner()]).then(()=>{
+        if (runModal === false) {
+            return;
+        }
+        window.location.href = './htmlFolder/canlendar.html?' + breakfastQueriesName1 + breakfastQueriesUrl1 + breakfastQueriesName2 + breakfastQueriesUrl2 + breakfastQueriesName3 + breakfastQueriesUrl3 + breakfastQueriesName4 + breakfastQueriesUrl4 + breakfastQueriesName5 + breakfastQueriesUrl5 + breakfastQueriesName6 + breakfastQueriesUrl6 + breakfastQueriesName7 + breakfastQueriesUrl7 + lunchQueriesNames1 + lunchQueriesUrl1 + lunchQueriesNames2 + lunchQueriesUrl2 + lunchQueriesNames3 + lunchQueriesUrl3 + lunchQueriesNames4 + lunchQueriesUrl4 + lunchQueriesNames5 + lunchQueriesUrl5 + lunchQueriesNames6 + lunchQueriesUrl6 + lunchQueriesNames7 + lunchQueriesUrl7 + dinnerQueriesNames1 + dinnerQueriesUrl1 + dinnerQueriesNames2 + dinnerQueriesUrl2 + dinnerQueriesNames3 + dinnerQueriesUrl3 + dinnerQueriesNames4 + dinnerQueriesUrl4 + dinnerQueriesNames5 + dinnerQueriesUrl5 + dinnerQueriesNames6 + dinnerQueriesUrl6 + dinnerQueriesNames7 + dinnerQueriesUrl7;
+    });
 });
+
 
 var appid = '&app_id=e6094091';
 var appkey ='&app_key=998bd7f197846f5a6ef876a82bf64a36';
@@ -422,6 +528,7 @@ var testingBreakfastUrl = mainPartUrl + eggBreakfast + mainUrlKeys + baseBreakfa
 
 
 
+
 function getApi() {
     fetch(testingBreakfastUrl)
         .then(function (response){
@@ -431,4 +538,6 @@ function getApi() {
             console.log(data);
         })
 }
+
+console.log(window.location.href);
 
