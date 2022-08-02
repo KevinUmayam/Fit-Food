@@ -16,18 +16,18 @@ var submitBtn5 = document.querySelector("#exercise-submit5");
 var submitBtn6 = document.querySelector("#exercise-submit6");
 var submitBtn7 = document.querySelector("#exercise-submit7");
 //hide divs elements
-var hidden1 = document.querySelector("#hide-stuff1");
-var hidden2 = document.querySelector("#hide-stuff2");
-var hidden3 = document.querySelector("#hide-stuff3");
-var hidden4 = document.querySelector("#hide-stuff4");
-var hidden5 = document.querySelector("#hide-stuff5");
-var hidden6 = document.querySelector("#hide-stuff6");
-var hidden7 = document.querySelector("#hide-stuff7");
+var hidden1 = document.querySelector(".hide-stuff1");
+var hidden2 = document.querySelector(".hide-stuff2");
+var hidden3 = document.querySelector(".hide-stuff3");
+var hidden4 = document.querySelector(".hide-stuff4");
+var hidden5 = document.querySelector(".hide-stuff5");
+var hidden6 = document.querySelector(".hide-stuff6");
+var hidden7 = document.querySelector(".hide-stuff7");
 //
 var muscle = "";
 
 //element to which we will append created elements
-var intructionContainerEL = document.querySelector("#hide-stuff");
+var instructionContainerEL = document.querySelector("#container-div");
 
 // function to know which body part to fetch
 function muscleSelection(target) {
@@ -55,7 +55,9 @@ function muscleSelection(target) {
   }
 }
 //api get function
-function getApi() {
+function getApi(event) {
+  console.log(event);
+  var containerDiv = event.target.parentElement;
   var apiKey = "qjqjfEYrc2DD255MR7tPAg==T4xv9JXUfHFTmms1";
   fetch("https://api.api-ninjas.com/v1/exercises?muscle=" + muscle, {
     headers: {
@@ -88,7 +90,7 @@ function getApi() {
           //append created elements to container
           workoutDiv.appendChild(nameEl);
           workoutDiv.appendChild(instructionsEl);
-          intructionContainerEL.appendChild(workoutDiv);
+          containerDiv.appendChild(workoutDiv);
         }
       }
       localStorage.getItem(muscle);
@@ -99,58 +101,55 @@ function getApi() {
 }
 //click event excecutes functions
 function hideDD(params) {
-  const changeB = document.getElementById("body");
   changeB.setAttribute("class", "hidden");
-
-  const endF = document.getElementById("submit");
-  endF.setAttribute("class", "form");
 }
 
 submitBtn1.addEventListener("click", function (e) {
   e.preventDefault();
+
   console.log("hello");
   muscleSelection(dropdownEl1);
-  getApi();
+  getApi(e);
 });
 
 submitBtn2.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("hello");
   muscleSelection(dropdownEl2);
-  getApi();
+  getApi(e);
 });
 
 submitBtn3.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("hello");
   muscleSelection(dropdownEl3);
-  getApi();
+  getApi(e);
 });
 
 submitBtn4.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("hello");
   muscleSelection(dropdownEl4);
-  getApi();
+  getApi(e);
 });
 
 submitBtn5.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("hello");
   muscleSelection(dropdownEl5);
-  getApi();
+  getApi(e);
 });
 
 submitBtn6.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("hello");
   muscleSelection(dropdownEl6);
-  getApi();
+  getApi(e);
 });
 
 submitBtn7.addEventListener("click", function (e) {
   e.preventDefault();
   console.log("hello");
   muscleSelection(dropdownEl7);
-  getApi();
+  getApi(e);
 });
