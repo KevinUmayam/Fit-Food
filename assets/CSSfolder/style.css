@@ -19,6 +19,21 @@ body {
   font-size: 18vh;
 }
 
+#calendar-header {
+  display: flex;
+  height: 25vh;
+  justify-content: space-between;
+  padding: 10px;
+  color: #fffffe;
+  font-weight: bold;
+  background-image: linear-gradient(#7f5af0, #72757e, #2cb67d);
+}
+
+#back-button {
+  background-color: #7f5af0;
+  color: #2c2c2d;
+}
+
 .instructions {
   width: 70%;
   display: flex;
@@ -34,7 +49,7 @@ body {
   margin-top: 40px;
 }
 
-#caloriesBreakfast, #baseBreakfast, #caloriesLunch, #baseLunch, #caloriesDinner, #baseDinner {
+#caloriesBreakfast, #baseBreakfast, #caloriesLunch, #baseLunch, #caloriesDinner, #baseDinner, #muscleTarget {
   background-color: #7f5af0;
 }
 
@@ -59,6 +74,17 @@ body {
   box-sizing: border-box;
 }
 
+#day-one, #day-two, #day-three, #day-four, #day-five, #day-six, #day-seven {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+
+.day-header {
+  width: 20vw;
+  padding: 10px;
+}
+
 .check {
   width: 15px;
   height: 15px;
@@ -68,6 +94,40 @@ body {
 
 .hidden {
   display: none;
+}
+
+.lowc2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  flex-direction: row;
+  background-color: #7070702b;
+  border-radius: 20px;
+
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 0.2em;
+  margin-left: 0.5em;
+  font-size: 0.8em;
+  overflow: auto;
+  height: 30vh;
+  width: 15vw;
+}
+
+.lowc2 h1 {
+  font-size: 25px;
+  color: #1e7651;
+}
+
+.lowc2 p {
+  overflow: auto;
+}
+
+#hide-stuff {
+  display: flex;
+  flex-wrap: wrap;
+  height: 30vh;
+  width: 75vw;
 }
 
 
