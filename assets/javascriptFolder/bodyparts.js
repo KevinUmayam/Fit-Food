@@ -76,7 +76,7 @@ function getApi() {
         nameEl.setAttribute("class", "nameStyling");
         nameEl.innerText = numberList[i] + ". " + workoutName;
         //create h2 with instructions
-        var instructionsEl = document.createElement("h2");
+        var instructionsEl = document.createElement("p");
         instructionsEl.setAttribute("class", "instructionStyling");
         instructionsEl.innerText = "Instructions: " + instructionsText;
         //append created elements to container

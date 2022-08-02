@@ -7,24 +7,28 @@
     <title>Document</title>
     <link rel="stylesheet" href="../assets/CSSfolder/normalize.css" />
     <link rel="stylesheet" href="../assets/CSSfolder/skeleton.css" />
-    <link rel="stylesheet" href="../assets/CSSfolder/calendar.css" />
+    <link rel="stylesheet" href="../assets/CSSfolder/style.css" />
   </head>
   <body>
-    <section id="day-one">
-      <div id="day-one-meals">
-        <div id="b-ttl-one"></div>
-        <div id="b-btn-one"></div>
+    <header id="calendar-header">
+      <button id="back-button" onclick="window.location.href='/index.html'">Back to food selection</button>
+      <h1 id="header-text">FitFood</h1>
+    </header>
 
-        <div id="l-ttl-one"></div>
-        <div id="l-btn-one"></div>
+    <section id="day-one" style="border: solid 5px white">
+      <div class="day-header" id="day-one-meals">Day One
+        <div id="b-ttl-one">Oatmeal Bars</div>
+        <div id="b-btn-one"><button>Push For Recipe</button></div>
 
-        <div id="d-ttl-one"></div>
-        <div id="d-btn-one"></div>
+        <div id="l-ttl-one">Oatmeal Bars</div>
+        <div id="l-btn-one"><button>Push For Recipe</button></div>
+
+        <div id="d-ttl-one">Oatmeal Bars</div>
+        <div id="d-btn-one"><button>Push For Recipe</button></div>
       </div>
       <div id="day-one-exercises">
         <div class="container-div" id="hide-stuff">
-          <h1>Choose Exercise Zone</h1>
-
+          <h5>Choose Exercise Zone</h5>
           <select class="u-full-width" id="muscleTarget1">
 
             <option value="biceps">biceps</option>
@@ -32,7 +36,8 @@
             <option value="forearms">forearms</option>
             <option value="calves">calves</option>
             <option value="quadriceps">quadriceps</option>
-            <option value="abdominal">abdominals</option>
+
+            <option value="abdominals">abdominals</option>
             <option value="chest">chest</option>
             <option value="lower_back">lower_back</option>
             <option value="middle_back">middle_back</option>
@@ -54,12 +59,25 @@
       </div>
     </section>
 
-    <section id="day-two">
-      <div class="four columns" id="day-one-exercises">
+    <section id="day-two" style="border: solid 5px white">
+      <div class="day-header" id="day-two-meals">Day Two
+        <div id="b-ttl-two">Oatmeal Bars</div>
+        <div id="b-btn-two"><button>Push For Recipe</button></div>
+
+        <div id="l-ttl-two">Oatmeal Bars</div>
+        <div id="l-btn-two"><button>Push For Recipe</button></div>
+
+
+        <div id="d-ttl-two">Oatmeal Bars</div>
+        <div id="d-btn-two"><button>Push For Recipe</button></div>
+      </div>
+      <div id="day-two-exercises">
+
         <div class="container-div" id="hide-stuff">
-          <h1>Choose Exercise Zone</h1>
+          <h5>Choose Exercise Zone</h5>
 
           <select class="u-full-width" id="muscleTarget2">
+
             <option value="biceps">biceps</option>
             <option value="triceps">triceps</option>
             <option value="forearms">forearms</option>
@@ -78,19 +96,32 @@
             id="exercise-submit2"
           />
           <div>
-            <h1 class="workout-one-header"></h1>
-            <p class="workout-one-instructions"></p>
+            <h1 class="workout-two-header"></h1>
+            <p class="workout-two-instructions"></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="day-three">
-      <div class="four columns" id="day-one-exercises">
+    <section id="day-three" style="border: solid 5px white">
+      <div class="day-header" id="day-three-meals">Day Three
+        <div id="b-ttl-three">Oatmeal Bars</div>
+        <div id="b-btn-three"><button>Push For Recipe</button></div>
+
+
+        <div id="l-ttl-three">Oatmeal Bars</div>
+        <div id="l-btn-three"><button>Push For Recipe</button></div>
+
+        <div id="d-ttl-three">Oatmeal Bars</div>
+        <div id="d-btn-three"><button>Push For Recipe</button></div>
+      </div>
+      <div id="day-three-exercises">
+
         <div class="container-div" id="hide-stuff">
-          <h1>Choose Exercise Zone</h1>
+          <h5>Choose Exercise Zone</h5>
 
           <select class="u-full-width" id="muscleTarget3">
+
             <option value="biceps">biceps</option>
             <option value="triceps">triceps</option>
             <option value="forearms">forearms</option>
@@ -109,12 +140,29 @@
             id="exercise-submit3"
           />
           <div>
-            <h1 class="workout-one-header"></h1>
-            <p class="workout-one-instructions"></p>
+            <h1 class="workout-three-header"></h1>
+            <p class="workout-three-instructions"></p>
           </div>
         </div>
       </div>
     </section>
+
+
+    <section id="day-four" style="border: solid 5px white">
+      <div class="day-header" id="day-four-meals">Day Four
+        <div id="b-ttl-four">Oatmeal Bars</div>
+        <div id="b-btn-four"><button>Push For Recipe</button></div>
+
+        <div id="l-ttl-four">Oatmeal Bars</div>
+        <div id="l-btn-four"><button>Push For Recipe</button></div>
+
+        <div id="d-ttl-four">Oatmeal Bars</div>
+        <div id="d-btn-four"><button>Push For Recipe</button></div>
+      </div>
+      <div id="day-four-exercises">
+
+        <div class="container-div" id="hide-stuff">
+          <h5>Choose Exercise Zone</h5>
 
     <section id="day-four">
       <div class="four columns" id="day-one-exercises">
@@ -122,6 +170,7 @@
           <h1>Choose Exercise Zone</h1>
 
           <select class="u-full-width" id="muscleTarget4">
+
             <option value="biceps">biceps</option>
             <option value="triceps">triceps</option>
             <option value="forearms">forearms</option>
@@ -140,19 +189,31 @@
             id="exercise-submit4"
           />
           <div>
-            <h1 class="workout-one-header"></h1>
-            <p class="workout-one-instructions"></p>
+            <h1 class="workout-four-header"></h1>
+            <p class="workout-four-instructions"></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="day-five">
-      <div class="four columns" id="day-one-exercises">
+    <section id="day-five" style="border: solid 5px white">
+      <div class="day-header" id="day-five-meals">Day Five
+        <div id="b-ttl-five">Oatmeal Bars</div>
+        <div id="b-btn-five"><button>Push For Recipe</button></div>
+
+        <div id="l-ttl-five">Oatmeal Bars</div>
+        <div id="l-btn-five"><button>Push For Recipe</button></div>
+
+        <div id="d-ttl-five">Oatmeal Bars</div>
+        <div id="d-btn-five"><button>Push For Recipe</button></div>
+      </div>
+      <div id="day-five-exercises">
+
         <div class="container-div" id="hide-stuff">
-          <h1>Choose Exercise Zone</h1>
+          <h5>Choose Exercise Zone</h5>
 
           <select class="u-full-width" id="muscleTarget5">
+
             <option value="biceps">biceps</option>
             <option value="triceps">triceps</option>
             <option value="forearms">forearms</option>
@@ -171,19 +232,32 @@
             id="exercise-submit5"
           />
           <div>
-            <h1 class="workout-one-header"></h1>
-            <p class="workout-one-instructions"></p>
+            <h1 class="workout-five-header"></h1>
+            <p class="workout-five-instructions"></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="day-six">
-      <div class="four columns" id="day-one-exercises">
+    <section id="day-six" style="border: solid 5px white">
+      <div class="day-header" id="day-six-meals">Day Six
+        <div id="b-ttl-six">Oatmeal Bars</div>
+        <div id="b-btn-one"><button>Push For Recipe</button></div>
+
+        <div id="l-ttl-six">Oatmeal Bars</div>
+        <div id="l-btn-six"><button>Push For Recipe</button></div>
+
+
+        <div id="d-ttl-six">Oatmeal Bars</div>
+        <div id="d-btn-six"><button>Push For Recipe</button></div>
+      </div>
+      <div id="day-six-exercises">
+
         <div class="container-div" id="hide-stuff">
-          <h1>Choose Exercise Zone</h1>
+          <h5>Choose Exercise Zone</h5>
 
           <select class="u-full-width" id="muscleTarget6">
+
             <option value="biceps">biceps</option>
             <option value="triceps">triceps</option>
             <option value="forearms">forearms</option>
@@ -202,18 +276,36 @@
             id="exercise-submit6"
           />
           <div>
-            <h1 class="workout-one-header"></h1>
-            <p class="workout-one-instructions"></p>
+            <h1 class="workout-six-header"></h1>
+            <p class="workout-six-instructions"></p>
           </div>
         </div>
       </div>
     </section>
+
+
+    <section id="day-seven" style="border: solid 5px white">
+      <div class="day-header" id="day-seven-meals">Day Seven
+        <div id="b-ttl-seven">Oatmeal Bars</div>
+        <div id="b-btn-seven"><button>Push For Recipe</button></div>
+
+        <div id="l-ttl-seven">Oatmeal Bars</div>
+        <div id="l-btn-seven"><button>Push For Recipe</button></div>
+
+        <div id="d-ttl-seven">Oatmeal Bars</div>
+        <div id="d-btn-seven"><button>Push For Recipe</button></div>
+      </div>
+      <div id="day-one-exercises">
+
+        <div class="container-div" id="hide-stuff">
+          <h5>Choose Exercise Zone</h5>
 
     <section id="day-seven">
       <div class="four columns" id="day-one-exercises">
         <div class="container-div" id="hide-stuff">
           <h1>Choose Exercise Zone</h1>
           <select class="u-full-width" id="muscleTarget7">
+
             <option value="biceps">biceps</option>
             <option value="triceps">triceps</option>
             <option value="forearms">forearms</option>
@@ -233,12 +325,13 @@
             id="exercise-submit7"
           />
           <div>
-            <h1 class="workout-one-header"></h1>
-            <p class="workout-one-instructions"></p>
+            <h1 class="workout-seven-header"></h1>
+            <p class="workout-seven-instructions"></p>
           </div>
         </div>
       </div>
     </section>
+
   </body>
   <script src="/assets/javascriptFolder/calendar.js"></script>
   <script src="/assets/javascriptFolder/bodyparts.js"></script>
