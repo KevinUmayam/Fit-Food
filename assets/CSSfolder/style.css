@@ -91,6 +91,11 @@ select {
   padding: 10px;
 }
 
+.breakfast-row, .lunch-row, .dinner-row {
+  display: flex;
+  justify-content: center;
+}
+
 .check {
   width: 15px;
   height: 15px;
@@ -114,22 +119,21 @@ select {
   padding-bottom: 1.5em;
   padding-left: 0.2em;
   margin-left: 0.5em;
-  font-size: 0.8em;
   overflow: auto;
   height: 30vh;
   width: 15vw;
 }
 
 .lowc2 h1 {
-  font-size: 25px;
+  font-size: 20px;
   color: #1e7651;
 }
 
-.lowc2 p {
-  overflow: auto;
+.lowc2 h2 {
+  font-size: 15px;
 }
 
-#hide-stuff1, #hide-stuff2, #hide-stuff3, #hide-stuff4, #hide-stuff5, #hide-stuff6, #hide-stuff7{
+.hide-stuff1, .hide-stuff2, .hide-stuff3, .hide-stuff4, .hide-stuff5, .hide-stuff6, #hide-stuff7{
   display: flex;
   flex-wrap: wrap;
   height: 30vh;
