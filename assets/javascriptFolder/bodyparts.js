@@ -15,15 +15,8 @@ var submitBtn4 = document.querySelector("#exercise-submit4");
 var submitBtn5 = document.querySelector("#exercise-submit5");
 var submitBtn6 = document.querySelector("#exercise-submit6");
 var submitBtn7 = document.querySelector("#exercise-submit7");
-//hide divs elements
-var hidden1 = document.querySelector(".hide-stuff1");
-var hidden2 = document.querySelector(".hide-stuff2");
-var hidden3 = document.querySelector(".hide-stuff3");
-var hidden4 = document.querySelector(".hide-stuff4");
-var hidden5 = document.querySelector(".hide-stuff5");
-var hidden6 = document.querySelector(".hide-stuff6");
-var hidden7 = document.querySelector(".hide-stuff7");
-//
+
+//key fetch variable
 var muscle = "";
 
 //element to which we will append created elements
@@ -56,7 +49,7 @@ function muscleSelection(target) {
 }
 //api get function
 function getApi(event) {
-  console.log(event);
+  console.log(event.target.parentElement);
   //append to parent elemente
   var containerDiv = event.target.parentElement;
   var apiKey = "qjqjfEYrc2DD255MR7tPAg==T4xv9JXUfHFTmms1";
@@ -71,6 +64,7 @@ function getApi(event) {
       console.log(data);
       var numberList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
       //to create and display instruction boxes.
+
       for (let i = 0; i < data.length; i++) {
         //name variable
         var workoutName = data[i].name;
@@ -112,6 +106,7 @@ submitBtn1.addEventListener("click", function (e) {
 
 submitBtn2.addEventListener("click", function (e) {
   e.preventDefault();
+
   console.log("hello");
   muscleSelection(dropdownEl2);
   getApi(e);
@@ -119,6 +114,7 @@ submitBtn2.addEventListener("click", function (e) {
 
 submitBtn3.addEventListener("click", function (e) {
   e.preventDefault();
+
   console.log("hello");
   muscleSelection(dropdownEl3);
   getApi(e);
@@ -126,6 +122,7 @@ submitBtn3.addEventListener("click", function (e) {
 
 submitBtn4.addEventListener("click", function (e) {
   e.preventDefault();
+
   console.log("hello");
   muscleSelection(dropdownEl4);
   getApi(e);
