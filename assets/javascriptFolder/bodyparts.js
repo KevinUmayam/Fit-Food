@@ -57,6 +57,7 @@ function muscleSelection(target) {
 //api get function
 function getApi(event) {
   console.log(event);
+  //append to parent elemente
   var containerDiv = event.target.parentElement;
   var apiKey = "qjqjfEYrc2DD255MR7tPAg==T4xv9JXUfHFTmms1";
   fetch("https://api.api-ninjas.com/v1/exercises?muscle=" + muscle, {
@@ -100,9 +101,6 @@ function getApi(event) {
     });
 }
 //click event excecutes functions
-function hideDD(params) {
-  changeB.setAttribute("class", "hidden");
-}
 
 submitBtn1.addEventListener("click", function (e) {
   e.preventDefault();
