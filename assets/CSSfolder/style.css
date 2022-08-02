@@ -49,7 +49,13 @@ body {
   margin-top: 40px;
 }
 
-#caloriesBreakfast, #baseBreakfast, #caloriesLunch, #baseLunch, #caloriesDinner, #baseDinner, #muscleTarget1, #muscleTarget2, #muscleTarget3, #muscleTarget4, #muscleTarget5, #muscleTarget, #muscleTarget6, #muscleTarget7 {
+/* #caloriesBreakfast, #baseBreakfast, #caloriesLunch, #baseLunch, #caloriesDinner, 
+#baseDinner, #muscleTarget1, #muscleTarget2, #muscleTarget3, #muscleTarget4, 
+#muscleTarget5, #muscleTarget, #muscleTarget6, #muscleTarget7 {
+  background-color: #7f5af0;
+} */
+
+select {
   background-color: #7f5af0;
 }
 
@@ -123,7 +129,7 @@ body {
   overflow: auto;
 }
 
-#hide-stuff {
+#hide-stuff1, #hide-stuff2, #hide-stuff3, #hide-stuff4, #hide-stuff5, #hide-stuff6, #hide-stuff7{
   display: flex;
   flex-wrap: wrap;
   height: 30vh;
