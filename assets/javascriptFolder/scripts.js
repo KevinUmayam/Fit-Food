@@ -19,3 +19,14 @@ fetch("https://exercisedb.p.rapidapi.com/exercises", options)
       // console.log(equipmentEl);
     }
   });
+
+
+  const targetDiv = document.getElementById("container-div");
+const btn = document.getElementById("exercise-submit1");
+btn.onclick = function () {
+  if (targetDiv.style.display !== "none") {
+    targetDiv.style.display = "none";
+  } else {
+    targetDiv.style.display = "block";
+  }
+};
