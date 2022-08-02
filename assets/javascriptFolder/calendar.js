@@ -51,3 +51,5 @@ function breakfast() {
             aBreakfast.appendChild(breakfastButton);
             breakfastRecipe[i].appendChild(aBreakfast);
         }
+   }
+}
