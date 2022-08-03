@@ -4,6 +4,7 @@ body {
   color: #fffffe;
 }
 
+/* index.html header */
 .welcome-header {
   display: flex;
   height: 25vh;
@@ -15,10 +16,12 @@ body {
   background-image: linear-gradient(#7f5af0, #72757e, #2cb67d);
 }
 
+
 #header-text {
   font-size: 18vh;
 }
 
+/* calendar html header */
 #calendar-header {
   display: flex;
   height: 25vh;
@@ -30,6 +33,7 @@ body {
   background-image: linear-gradient(#7f5af0, #72757e, #2cb67d);
 }
 
+/* calendar page back button styling */
 #back-button {
   background-color: #7f5af0;
   color: #fffffe;
@@ -40,6 +44,7 @@ body {
   color: #72757e;
 }
 
+/* index html instruction heading */
 .instructions {
   width: 70%;
   display: flex;
@@ -55,10 +60,12 @@ body {
   margin-top: 40px;
 }
 
+/* dropdown menu styling */
 select {
   background-color: #7f5af0;
 }
 
+/* contaner styling for food input form */
 .form-container {
   position: relative;
   width: 100%;
@@ -67,6 +74,7 @@ select {
   box-sizing: border-box; 
 }
 
+/* nutrition checkbox container style */
 .custom-container-diet, .custom-container-allergies {
   display: flex;
   flex-wrap: wrap;
@@ -79,6 +87,7 @@ select {
   box-sizing: border-box;
 }
 
+/* header styling for calendar day titles */
 .day-header {
   width: 20vw;
   padding: 10px;
@@ -89,6 +98,8 @@ select {
   font-size: x-large;
 }
 
+
+/* meal selection border styling */
 #breakfast-selection, #lunch-selection, #dinner-selection {
   border: #2cb67d;
   border-style: solid;
@@ -105,18 +116,14 @@ select {
 .meal-title {
   font-size: x-large;
 }
-
+ /* checkbox styling/sizing */
 .check {
   width: 15px;
   height: 15px;
   margin: 25px 15px 25px 50px;
-
 }
 
-.hidden {
-  display: none;
-}
-
+/* workout instruction card styling */
 .lowc2 {
   display: flex;
   flex-wrap: wrap;
@@ -134,10 +141,6 @@ select {
   width: 14.7vw;
 }
 
-#container-div {
-  display: flex;
-  flex-wrap: wrap;
-}
 
 .lowc2 h1 {
   font-size: 20px;
@@ -149,6 +152,12 @@ select {
   font-size: 15px;
 }
 
+#container-div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* border styling for each day on calendar */
 .day-border {
   border: solid;
   border-style: solid;
