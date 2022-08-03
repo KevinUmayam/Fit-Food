@@ -12,14 +12,14 @@
   <body>
     <header id="calendar-header">
       <button id="back-button" onclick="window.location.href='../index.html'">
-        Back to food selection
+        <-- Back to food selection
       </button>
       <h1 id="header-text">FitFood</h1>
     </header>
 
-    <section id="day-one" style="border: solid 5px white">
+    <section class="day-border" id="day-one">
       <div class="day-header" id="day-one-meals">
-        Day One
+        <p class="day-header-text">Day One</p>
         <div class="b-ttl"></div>
         <div class="b-btn"></div>
 
@@ -31,7 +31,7 @@
       </div>
       <div id="day-one-exercises" class="exercise-div">
         <div id="container-div">
-          <h5>Choose Exercise Zone</h5>
+          <h5 id="title1">Choose Exercise Zone</h5>
           <select class="u-full-width" id="muscleTarget1">
             <option value="biceps">biceps</option>
             <option value="triceps">triceps</option>
@@ -56,11 +56,26 @@
           </div>
         </div>
       </div>
+      <script>
+        const targetTitle1 = document.getElementById("title1");
+        let btn1 = document.getElementById("exercise-submit1");
+        btn1.addEventListener('click', function () {
+        if (targetTitle1.style.display !== "none") {
+          targetTitle1.style.display = "none";
+          let hideDropdown = document.getElementById("muscleTarget1");
+          hideDropdown.style.display = 'none';
+          let hideButton = document.getElementById("exercise-submit1");
+          hideButton.style.display = 'none';
+        } else {
+          targetTitle.style.display = "block";
+        }
+        });
+      </script>
     </section>
 
-    <section id="day-two" style="border: solid 5px white">
+    <section class="day-border" id="day-two">
       <div class="day-header" id="day-two-meals">
-        Day Two
+        <p class="day-header-text">Day Two</p>
         <div class="b-ttl"></div>
         <div class="b-btn"></div>
 
@@ -72,8 +87,7 @@
       </div>
       <div id="day-two-exercises" class="exercise-div">
         <div id="container-div">
-          <h5>Choose Exercise Zone</h5>
-
+          <h5 id="title2">Choose Exercise Zone</h5>
           <select class="u-full-width" id="muscleTarget2">
             <option value="biceps">biceps</option>
             <option value="triceps">triceps</option>
@@ -98,11 +112,26 @@
           </div>
         </div>
       </div>
+      <script>
+        const targetTitle2 = document.getElementById("title2");
+        let btn2 = document.getElementById("exercise-submit2");
+        btn2.addEventListener('click', function () {
+        if (targetTitle2.style.display !== "none") {
+          targetTitle2.style.display = "none";
+          let hideDropdown = document.getElementById("muscleTarget2");
+          hideDropdown.style.display = 'none';
+          let hideButton = document.getElementById("exercise-submit2");
+          hideButton.style.display = 'none';
+        } else {
+          targetTitle.style.display = "block";
+        }
+        });
+      </script>
     </section>
 
-    <section id="day-three" style="border: solid 5px white">
+    <section class="day-border" id="day-three">
       <div class="day-header" id="day-three-meals">
-        Day Three
+        <p class="day-header-text">Day Three</p>
         <div class="b-ttl"></div>
         <div class="b-btn"></div>
 
@@ -114,7 +143,7 @@
       </div>
       <div id="day-three-exercises" class="exercise-div">
         <div id="container-div">
-          <h5>Choose Exercise Zone</h5>
+          <h5 id="title3">Choose Exercise Zone</h5>
 
           <select class="u-full-width" id="muscleTarget3">
             <option value="biceps">biceps</option>
@@ -140,11 +169,26 @@
           </div>
         </div>
       </div>
+      <script>
+        const targetTitle3 = document.getElementById("title3");
+        let btn3 = document.getElementById("exercise-submit3");
+        btn3.addEventListener('click', function () {
+        if (targetTitle3.style.display !== "none") {
+          targetTitle3.style.display = "none";
+          let hideDropdown = document.getElementById("muscleTarget3");
+          hideDropdown.style.display = 'none';
+          let hideButton = document.getElementById("exercise-submit3");
+          hideButton.style.display = 'none';
+        } else {
+          targetTitle.style.display = "block";
+        }
+        });
+      </script>
     </section>
 
-    <section id="day-four" style="border: solid 5px white">
+    <section class="day-border" id="day-four">
       <div class="day-header" id="day-four-meals">
-        Day Four
+        <p class="day-header-text">Day Four</p>
         <div class="b-ttl"></div>
         <div class="b-btn"></div>
 
@@ -156,7 +200,7 @@
       </div>
       <div id="day-four-exercises" class="exercise-div">
         <div id="container-div">
-          <h5>Choose Exercise Zone</h5>
+          <h5 id="title4">Choose Exercise Zone</h5>
 
           <select class="u-full-width" id="muscleTarget4">
             <option value="biceps">biceps</option>
@@ -182,11 +226,26 @@
           </div>
         </div>
       </div>
+      <script>
+        const targetTitle4 = document.getElementById("title4");
+        let btn4 = document.getElementById("exercise-submit4");
+        btn4.addEventListener('click', function () {
+        if (targetTitle4.style.display !== "none") {
+          targetTitle4.style.display = "none";
+          let hideDropdown = document.getElementById("muscleTarget4");
+          hideDropdown.style.display = 'none';
+          let hideButton = document.getElementById("exercise-submit4");
+          hideButton.style.display = 'none';
+        } else {
+          targetTitle.style.display = "block";
+        }
+        });
+      </script>
     </section>
 
-    <section id="day-five" style="border: solid 5px white">
+    <section class="day-border" id="day-five">
       <div class="day-header" id="day-five-meals">
-        Day Five
+        <p class="day-header-text">Day Five</p>
         <div class="b-ttl"></div>
         <div class="b-btn"></div>
 
@@ -198,7 +257,7 @@
       </div>
       <div id="day-five-exercises" class="exercise-div">
         <div id="container-div">
-          <h5>Choose Exercise Zone</h5>
+          <h5 id="title5">Choose Exercise Zone</h5>
 
           <select class="u-full-width" id="muscleTarget5">
             <option value="biceps">biceps</option>
@@ -224,11 +283,26 @@
           </div>
         </div>
       </div>
+      <script>
+        const targetTitle5 = document.getElementById("title5");
+        let btn5 = document.getElementById("exercise-submit5");
+        btn5.addEventListener('click', function () {
+        if (targetTitle5.style.display !== "none") {
+          targetTitle5.style.display = "none";
+          let hideDropdown = document.getElementById("muscleTarget5");
+          hideDropdown.style.display = 'none';
+          let hideButton = document.getElementById("exercise-submit5");
+          hideButton.style.display = 'none';
+        } else {
+          targetTitle.style.display = "block";
+        }
+        });
+      </script>
     </section>
 
-    <section id="day-six" style="border: solid 5px white">
+    <section class="day-border" id="day-six">
       <div class="day-header" id="day-six-meals">
-        Day Six
+        <p class="day-header-text">Day Six</p>
         <div class="b-ttl"></div>
         <div class="b-btn"></div>
 
@@ -240,7 +314,7 @@
       </div>
       <div id="day-six-exercises" class="exercise-div">
         <div id="container-div">
-          <h5>Choose Exercise Zone</h5>
+          <h5 id="title6">Choose Exercise Zone</h5>
 
           <select class="u-full-width" id="muscleTarget6">
             <option value="biceps">biceps</option>
@@ -266,11 +340,26 @@
           </div>
         </div>
       </div>
+      <script>
+        const targetTitle6 = document.getElementById("title6");
+        let btn6 = document.getElementById("exercise-submit6");
+        btn6.addEventListener('click', function () {
+        if (targetTitle6.style.display !== "none") {
+          targetTitle6.style.display = "none";
+          let hideDropdown = document.getElementById("muscleTarget6");
+          hideDropdown.style.display = 'none';
+          let hideButton = document.getElementById("exercise-submit6");
+          hideButton.style.display = 'none';
+        } else {
+          targetTitle.style.display = "block";
+        }
+        });
+      </script>
     </section>
 
-    <section id="day-seven" style="border: solid 5px white">
+    <section class="day-border" id="day-seven">
       <div class="day-header" id="day-seven-meals">
-        Day Seven
+        <p class="day-header-text">Day Seven</p>
         <div class="b-ttl"></div>
         <div class="b-btn"></div>
 
@@ -282,7 +371,7 @@
       </div>
       <div id="day-seven-exercises" class="exercise-div">
         <div id="container-div">
-          <h5>Choose Exercise Zone</h5>
+          <h5 id="title7">Choose Exercise Zone</h5>
 
           <select class="u-full-width" id="muscleTarget7">
             <option value="biceps">biceps</option>
@@ -308,6 +397,21 @@
           </div>
         </div>
       </div>
+      <script>
+        const targetTitle7 = document.getElementById("title7");
+        let btn7 = document.getElementById("exercise-submit7");
+        btn7.addEventListener('click', function () {
+        if (targetTitle7.style.display !== "none") {
+          targetTitle7.style.display = "none";
+          let hideDropdown = document.getElementById("muscleTarget7");
+          hideDropdown.style.display = 'none';
+          let hideButton = document.getElementById("exercise-submit7");
+          hideButton.style.display = 'none';
+        } else {
+          targetTitle.style.display = "block";
+        }
+        });
+      </script>
     </section>
   </body>
   <script src="../assets/javascriptFolder/calendar.js"></script>

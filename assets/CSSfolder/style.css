@@ -23,6 +23,7 @@ body {
   display: flex;
   height: 25vh;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
   color: #fffffe;
   font-weight: bold;
@@ -31,7 +32,12 @@ body {
 
 #back-button {
   background-color: #7f5af0;
-  color: #2c2c2d;
+  color: #fffffe;
+}
+
+#back-button:hover {
+  background-color: #6045b0;
+  color: #72757e;
 }
 
 .instructions {
@@ -49,12 +55,6 @@ body {
   margin-top: 40px;
 }
 
-/* #caloriesBreakfast, #baseBreakfast, #caloriesLunch, #baseLunch, #caloriesDinner, 
-#baseDinner, #muscleTarget1, #muscleTarget2, #muscleTarget3, #muscleTarget4, 
-#muscleTarget5, #muscleTarget, #muscleTarget6, #muscleTarget7 {
-  background-color: #7f5af0;
-} */
-
 select {
   background-color: #7f5af0;
 }
@@ -70,7 +70,6 @@ select {
 .custom-container-diet, .custom-container-allergies {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-evenly; */
   align-items: baseline;
   position: relative;
   width: 100%;
@@ -80,20 +79,31 @@ select {
   box-sizing: border-box;
 }
 
-#day-one, #day-two, #day-three, #day-four, #day-five, #day-six, #day-seven {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100vw;
-}
-
 .day-header {
   width: 20vw;
   padding: 10px;
 }
 
+.day-header-text {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+#breakfast-selection, #lunch-selection, #dinner-selection {
+  border: #2cb67d;
+  border-style: solid;
+  border-left: transparent;
+  border-right: transparent;
+  padding: 15px;
+}
+
 .breakfast-row, .lunch-row, .dinner-row {
   display: flex;
   justify-content: center;
+}
+
+.meal-title {
+  font-size: x-large;
 }
 
 .check {
@@ -112,7 +122,7 @@ select {
   flex-wrap: wrap;
   align-content: space-between;
   flex-direction: row;
-  background-color: #7070702b;
+  background-color: #4e5054;
   border-radius: 20px;
 
   padding-top: 1.5em;
@@ -121,48 +131,34 @@ select {
   margin-left: 0.5em;
   overflow: auto;
   height: 30vh;
-  width: 15vw;
+  width: 14.7vw;
+}
+
+#container-div {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .lowc2 h1 {
   font-size: 20px;
-  color: #1e7651;
+  font-weight: bold;
+  color: #2cb67d;
 }
 
 .lowc2 h2 {
   font-size: 15px;
 }
 
-.hide-stuff1, .hide-stuff2, .hide-stuff3, .hide-stuff4, .hide-stuff5, .hide-stuff6, #hide-stuff7{
+.day-border {
+  border: solid;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #2cb67d;
+
   display: flex;
   flex-wrap: wrap;
-  height: 30vh;
-  width: 75vw;
+  width: 100vw;
 }
-
-
-.button.button-submit,
-button.button-submit,
-input[type="submit"].button-submit,
-input[type="reset"].button-submit,
-input[type="button"].button-submit {
-  color: #fffffe;
-  background-color: #2cb67d;
-  border-color: #2cb67d; }
-.button.button-submit:hover,
-button.button-submit:hover,
-input[type="submit"].button-submit:hover,
-input[type="reset"].button-submit:hover,
-input[type="button"].button-submit:hover,
-.button.button-submit:focus,
-button.button-submit:focus,
-input[type="submit"].button-submit:focus,
-input[type="reset"].button-submit:focus,
-input[type="button"].button-submit:focus {
-  color: #fffffe;
-  background-color: #1e7651;
-  border-color: #1e7651; }
-
 
 /*Added by Charlie for modal 7/29*/
 .modal {
